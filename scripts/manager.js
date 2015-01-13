@@ -1,0 +1,62 @@
+var state=0|1|2; //not started/playing/over
+var Manager=new function ()
+{
+    this.size=5;
+	this.steps=57;
+	this.moves=0;
+	this.posnx;
+	this.posny;
+    this.board;
+    this.new = function () {
+        Board.init();
+		Display.init();
+        Generate();
+        Board.print();
+        Input.gamebind();
+    }
+
+	this.isSolved = function () {
+		var tx,ty,theno=this.board[0][0];
+		for(tx=0;tx<this.size;tx++)
+			for(ty=0;ty<this.size;ty++)
+				{if(this.board[tx][ty]!=theno) return false;}
+		return true;
+	}
+
+	this.playMove = function (x) {
+		var invalid=false;
+		Board.removeCursor();
+		switch(x) {
+			case 'up':case 0:
+				if(this.posny!=0) this.posny--;
+				else invalid=true;
+				break;
+			case 'left':case 3:
+				if(this.posnx!=0) this.posnx--;
+				else invalid=true;
+				break;
+			case 'down':case 2:
+				if(this.posny!=this.size-1) this.posny++;
+				else invalid=true;
+				break;
+			case 'right':case 1:
+				if(this.posnx!=this.size-1) this.posnx++;
+				else invalid=true;
+				break;
+		}
+
+		if(!invalid){
+			if(this.board[this.posnx][this.posny]!=0)
+				this.board[this.posnx][this.posny]--;
+			else this.board[this.posnx][this.posny]=5;
+			this.moves++;
+			Board.updateSquare();
+		}
+
+		Board.addCursor();
+		Display.updateScore();
+
+		if(this.isSolved())
+			alert("Solved in "+this.moves+" moves instead of "+this.steps+" moves.");
+	}
+}

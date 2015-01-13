@@ -1,0 +1,86 @@
+<html>
+<head>
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="styles/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+
+</head>
+<body>
+    <table class="body" align="center" >
+        <tr>
+            <td>
+                <div class="menu">
+                    <span><i class="fa fa-repeat fa-3x" onclick="Manager.new();" title="New"></i></span>
+                    <span><i class="fa fa-question fa-3x" onclick="Display.showHelp();" title="Help"></i></span>
+                    <span><i class="fa fa-cog fa-3x" onclick="Display.showSettings();" title="Settings"></i></span>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div id="container" class="body" >
+        <table id="score">
+            <tr id="scorerow">
+                <td class="c0" id="s2">0</td>
+                <td class="c1" id="s1">0</td>
+                <td class="c2" id="s0">0</td>
+                <td class="sbetn"></td>
+                <td class="c3" id="o2">0</td>
+                <td class="c4" id="o1">0</td>
+                <td class="c5" id="o0">0</td>
+            </tr>
+            <tr id="move">
+                <td colspan="3" class="scorelabel">Moves</td>
+                <td></td>
+                <td colspan="3" class="scorelabel">Optimum</td>
+            </tr>
+        </table>
+
+        <div id="tab" class="tab">
+        </div>
+    </div>
+    <div class="body" id="help">
+        <div class="tab">
+            <div class="body-without-border">
+                <div>
+                    <p>
+                        You have a cursor which you can move around using keyboard or via swiping.
+                    </p>
+                    <p>
+                        You need to colour all the squares with the same colour.
+                    </p>
+                    <p>
+                        You can change the colour of a square by making your cursor step on it.
+                    </p>
+                    <p>
+                        The colour changes from F to E and so on to A after which it cycles back again to A.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body" id="settings">
+        <div class="tab">
+            <div class="body-without-border">
+                <div>
+                    <p>
+                        This is a work in progress.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/lib/mousetrap.js"></script>
+    <script src="scripts/lib/classList.js"></script>
+    <script src="scripts/generate.js"></script>
+    <script src="scripts/board.js"></script>
+    <script src="scripts/input.js"></script>
+    <script src="scripts/display.js"></script>
+    <script src="scripts/helpers.js"></script>
+    <script src="scripts/manager.js"></script>
+    <script>
+      Manager.new();
+    </script>
+</body>
+</html>
