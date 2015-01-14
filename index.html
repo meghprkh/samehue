@@ -3,22 +3,18 @@
 
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link href="styles/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
 
 </head>
 <body>
-    <table class="body" align="center" >
-        <tr>
-            <td>
-                <div class="menu">
-                    <span><i class="fa fa-repeat fa-3x" onclick="Manager.new();" title="New"></i></span>
-                    <span><i class="fa fa-question fa-3x" onclick="Display.showHelp();" title="Help"></i></span>
-                    <span><i class="fa fa-cog fa-3x" onclick="Display.showSettings();" title="Settings"></i></span>
-                </div>
-            </td>
-        </tr>
-    </table>
+    <div class="body" >
+        <div class="menu">
+            <span><i class="fa fa-repeat fa-3x" onclick="Manager.new();" title="New"></i></span>
+            <span><i class="fa fa-question fa-3x" onclick="Display.showHelp();" title="Help"></i></span>
+            <span><i class="fa fa-cog fa-3x" onclick="Display.showSettings();" title="Settings"></i></span>
+        </div>
+    </div>
     <div id="container" class="body" >
         <table id="score">
             <tr id="scorerow">
@@ -39,6 +35,12 @@
 
         <div id="tab" class="tab">
         </div>
+        <div class="menu">
+            <span><i class="fa fa-arrow-up fa-2x" onclick="Manager.playMove('up')" title="Up"></i></span>
+            <span><i class="fa fa-arrow-down fa-2x" onclick="Manager.playMove('down')" title="Down"></i></span>
+            <span><i class="fa fa-arrow-left fa-2x" onclick="Manager.playMove('left')" title="Left"></i></span>
+            <span><i class="fa fa-arrow-right fa-2x" onclick="Manager.playMove('right')" title="Right"></i></span>
+        </div>
     </div>
     <div class="body" id="help">
         <div class="tab">
@@ -56,9 +58,9 @@
                     <p>
                         The colour changes from F to E and so on to A after which it cycles back again to F.
                     </p>
-<p>
-If you feel that the puzzle is to easy then regenerate the puzzle as the generator algorithm is not perfect yet.
-</p>
+                    <p>
+                        If you feel that the puzzle is too easy then regenerate the puzzle as the generator algorithm is not perfect yet.
+                    </p>
                 </div>
             </div>
         </div>
