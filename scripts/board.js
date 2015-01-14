@@ -5,7 +5,7 @@ var Board = new function () {
 
     this.init = function() {
         // Add Styles
-        var sheet = document.styleSheets[0];
+        var sheet = document.styleSheets[1];
         var width = Helpers.getWindowSize().width*0.95;
         var height = Helpers.getWindowSize().height;
         var x;

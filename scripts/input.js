@@ -8,7 +8,7 @@ var Input= new function()
         /*var hammertime = new Hammer(Helpers.gei("container"));
         hammertime.get('swipe').set({ direction: Hammer.DIRECTION_ALL,velocity:0.01 });
         hammertime.on('swipeup swipedown swipeleft swiperight',function(ev){Manager.playMove(ev.type.substring(5));});*/
-        touchinp();
+        //touchinp();
     }
     function touchinp(){
         if (window.navigator.msPointerEnabled) {
