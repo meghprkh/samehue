@@ -103,9 +103,32 @@ body {
     display:none;
 }
 
+#HelpAndSettings > div {
+    display : block;
+}
+
 #ReturnToGame {
     display:block;
-    background-color:#2ecc71;
     font-size:x-large;
-    cursor:pointer;
+}
+
+#confirmNewGame {
+    font-size:x-large;
+    text-align:center;
+}
+
+#confirmNewGame > .button {
+    margin : 15px;
+}
+.green {
+    background-color:#2ecc71 !important;
+}
+
+.red {
+    background-color:#e85444 !important;
+}
+
+.button {
+    cursor : pointer;
+    padding : 10px;
 }

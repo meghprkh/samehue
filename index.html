@@ -10,7 +10,7 @@
 <body>
     <div class="body" >
         <div class="menu">
-            <span><i class="fa fa-repeat fa-3x" onclick="Manager.new();" title="New"></i></span>
+            <span><i class="fa fa-repeat fa-3x" onclick="Display.confirmNewGame();" title="New"></i></span>
             <span><i class="fa fa-question fa-3x" onclick="Display.showHelp();" title="Help"></i></span>
             <span><i class="fa fa-cog fa-3x" onclick="Display.showSettings();" title="Settings"></i></span>
         </div>
@@ -45,7 +45,7 @@
     <div class="body" id="HelpAndSettings">
         <div class="tab">
             <div class="body-without-border">
-                <div id="ReturnToGame" onclick="Display.showGame()">
+                <div id="ReturnToGame" class="green button" onclick="Display.showGame()">
                    <i class="fa fa-arrow-left"></i> Return to game
                 </div>
                 <div id="help">
@@ -69,6 +69,12 @@
                     <p>
                         This is a work in progress.
                     </p>
+                </div>
+                <div id="confirmNewGame">
+                    Are you sure you want to start a new game?
+                    <br /><br />
+                    <span class="red button" onclick="Manager.new()">Yes</span>
+                    <span class="green button" onclick="Display.showGame()">No</span>
                 </div>
             </div>
         </div>

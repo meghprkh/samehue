@@ -12,6 +12,11 @@ var Display = new function() {
     this.showGame = function() {
         this.hideall();
         Helpers.gei("container").style.display="block";
+    };
+    this.confirmNewGame= function () {
+        this.hideall();
+        Helpers.gei("HelpAndSettings").style.display="block";
+        Helpers.gei("confirmNewGame").style.display="block";
     }
     this.init = function() {
         var x=Manager.steps.toString().split("").reverse().join("");
@@ -25,12 +30,13 @@ var Display = new function() {
         Helpers.gei("HelpAndSettings").style.display="none";
         Helpers.gei("help").style.display="none";
         Helpers.gei("settings").style.display="none";
-    }
+        Helpers.gei("confirmNewGame").style.display="none";
+    };
 
     this.updateScore = function () {
         var x=Manager.moves.toString().split("").reverse().join("");
         for(var c=0;c<x.length;c++) Helpers.gei("s"+c).innerHTML=x[c];
-    }
+    };
 
 
 
