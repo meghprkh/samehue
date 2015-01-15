@@ -7,12 +7,16 @@ var Manager=new function ()
 	this.posnx;
 	this.posny;
     this.board;
-    this.new = function () {
+
+    this.init = function () {
         Board.init();
-		Display.init();
+        Display.init();
+        Input.gamebind();
+    }
+    
+    this.new = function () {
         Generate();
         Board.print();
-        Input.gamebind();
     }
 
 	this.isSolved = function () {
