@@ -57,7 +57,7 @@ body {
     font-weight:bold;
 }
 
-i {color: #3a3a3c;}
+.menu i {color: #3a3a3c;}
 .c0 {background-color:#e85444}
 .c1 {background-color:#f1c40f}
 .c2 {background-color:#2ecc71}
@@ -97,4 +97,15 @@ i {color: #3a3a3c;}
 .scorelabel {
     padding: 5px;
     background-color:#555555;
+}
+
+#HelpAndSettings {
+    display:none;
+}
+
+#ReturnToGame {
+    display:block;
+    background-color:#2ecc71;
+    font-size:x-large;
+    cursor:pointer;
 }

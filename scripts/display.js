@@ -1,10 +1,12 @@
 var Display = new function() {
     this.showSettings = function() {
         this.hideall();
+        Helpers.gei("HelpAndSettings").style.display="block";
         Helpers.gei("settings").style.display="block";
     };
     this.showHelp = function() {
         this.hideall();
+        Helpers.gei("HelpAndSettings").style.display="block";
         Helpers.gei("help").style.display="block";
     };
     this.showGame = function() {
@@ -20,6 +22,7 @@ var Display = new function() {
     
     this.hideall = function() {
         Helpers.gei("container").style.display="none";
+        Helpers.gei("HelpAndSettings").style.display="none";
         Helpers.gei("help").style.display="none";
         Helpers.gei("settings").style.display="none";
     }

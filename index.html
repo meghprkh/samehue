@@ -42,10 +42,13 @@
             <span><i class="fa fa-arrow-right fa-2x" onclick="Manager.playMove('right')" title="Right"></i></span>
         </div>
     </div>
-    <div class="body" id="help">
+    <div class="body" id="HelpAndSettings">
         <div class="tab">
             <div class="body-without-border">
-                <div>
+                <div id="ReturnToGame" onclick="Display.showGame()">
+                   <i class="fa fa-arrow-left"></i> Return to game
+                </div>
+                <div id="help">
                     <p>
                         You have a cursor which you can move around using keyboard or via swiping.
                     </p>
@@ -62,13 +65,7 @@
                         If you feel that the puzzle is too easy then regenerate the puzzle as the generator algorithm is not perfect yet.
                     </p>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="body" id="settings">
-        <div class="tab">
-            <div class="body-without-border">
-                <div>
+                <div id="settings">
                     <p>
                         This is a work in progress.
                     </p>
