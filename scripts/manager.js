@@ -2,7 +2,7 @@ var state=0|1|2; //not started/playing/over
 var Manager=new function ()
 {
     this.size=5;
-	this.steps=57;
+	this.steps=45;
 	this.moves=0;
 	this.posnx;
 	this.posny;
