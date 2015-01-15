@@ -50,21 +50,6 @@ body {
     text-align:center;
 }
 
-
-#tab span span {
-    position: relative;
-}
-
-#tab span span p {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-	font-family:sans-serif;
-}
-
 #scorerow td {
     padding:0;margin:0;
     color:#FAF8EF;
