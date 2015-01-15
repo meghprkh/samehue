@@ -9,12 +9,12 @@ var Manager=new function ()
     this.board;
 
     this.init = function () {
-        Board.init();
-        Display.init();
         Input.gamebind();
     }
     
     this.new = function () {
+        Board.init();
+        Display.init();
         Generate();
         Board.print();
     }
