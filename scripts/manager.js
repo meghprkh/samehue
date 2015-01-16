@@ -13,7 +13,7 @@ var Manager=new function ()
     }
     
     this.new = function () {
-    	this.moves = 0 ;
+      	this.moves = 0 ;
         Board.init();
         Display.init();
         Generate();
