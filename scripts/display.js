@@ -22,7 +22,7 @@ var Display = new function() {
         var x=pad(Manager.steps,3);
         for(var c=0;c<x.length;c++) Helpers.gei("o"+c).innerHTML=x[c];
         this.showGame();
-        
+        this.updateScore();
     };
     
     this.hideall = function() {
