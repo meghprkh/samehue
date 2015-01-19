@@ -5,21 +5,10 @@ var Board = new function () {
 
     this.init = function() {
         // Add Styles
-        var sheet = document.styleSheets[1];
-        var width = Helpers.getWindowSize().width*0.95;
-        var height = Helpers.getWindowSize().height;
-        var x;
-        if(width/Manager.size>120) x=80;
-        else x=parseInt(width/Manager.size);
-            sheet.insertRule(".current {   box-shadow: 0 0 0 "+parseInt(x*0.1)+"px #FAF8EF inset;}", 1);
-            sheet.insertRule("#tab span {height:"+x+"px;width:"+x+"px;font-size:"+parseInt(x*0.5)+"px;}", 1);
-            sheet.insertRule("#tab span > span {line-height:"+x+"px;}", 1);
-            sheet.insertRule(".body {width:"+( x * Manager.size +10 )+"px}", 1);
-            sheet.insertRule(".body-without-border {width:"+( x * Manager.size )+"px}", 1);
-            sheet.insertRule(".menu i {font-size:"+( x * 0.5 )+"px}", 1);
-            sheet.insertRule("#scorerow td {height:"+parseInt(x*Manager.size/6)+
-                             "px;width:"+parseInt(x*Manager.size/6)+"px;"+
-                             "font-size:"+parseInt(x*0.5)+"px;}", 1);
+        var x = Math.floor ( ( Display.width - 10 ) / Manager.size ) ;
+        Display.sheet.insertRule(".current {   box-shadow: 0 0 0 "+Math.floor(x*0.1)+"px #FAF8EF inset;}", 0 );
+        Display.sheet.insertRule("#tab span {height:"+x+"px;width:"+x+"px;font-size:"+Math.floor(x*0.5)+"px;}", 0 );
+        Display.sheet.insertRule("#tab span > span {line-height:"+x+"px;}", 0 );
 
         // Add the table
         var table = Helpers.gei("tab");
