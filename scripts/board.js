@@ -16,6 +16,7 @@ var Board = new function () {
             sheet.insertRule("#tab span > span {line-height:"+x+"px;}", 1);
             sheet.insertRule(".body {width:"+( x * Manager.size +10 )+"px}", 1);
             sheet.insertRule(".body-without-border {width:"+( x * Manager.size )+"px}", 1);
+            sheet.insertRule(".menu i {font-size:"+( x * 0.5 )+"px}", 1);
             sheet.insertRule("#scorerow td {height:"+parseInt(x*Manager.size/6)+
                              "px;width:"+parseInt(x*Manager.size/6)+"px;"+
                              "font-size:"+parseInt(x*0.5)+"px;}", 1);

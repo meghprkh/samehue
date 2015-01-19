@@ -3,16 +3,16 @@
 
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="styles/icons.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
 
 </head>
 <body>
     <div class="body" >
         <div class="menu">
-            <span><i class="fa fa-repeat fa-3x" onclick="Display.confirmNewGame();" title="New"></i></span>
-            <span><i class="fa fa-question fa-3x" onclick="Display.showHelp();" title="Help"></i></span>
-            <span><i class="fa fa-cog fa-3x" onclick="Display.showSettings();" title="Settings"></i></span>
+            <span><i class="icon-reset" onclick="Display.confirmNewGame();" title="New"></i></span>
+            <span><i class="icon-help" onclick="Display.showHelp();" title="Help"></i></span>
+            <span><i class="icon-settings" onclick="Display.showSettings();" title="Settings"></i></span>
         </div>
     </div>
     <div id="container" class="body" >
@@ -40,7 +40,7 @@
         <div class="tab">
             <div class="body-without-border">
                 <div id="ReturnToGame" class="green button" onclick="Display.showGame()">
-                   <i class="fa fa-arrow-left"></i> Return to game
+                   <i class="icon-back"></i> Return to game
                 </div>
                 <div id="help">
                     <p>
