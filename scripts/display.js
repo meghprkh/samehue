@@ -47,7 +47,7 @@ var Display = new function() {
         this.determineSize();
         this.sheet.insertRule(".body {width:"+ this.width +"px}" , 0 );
         this.sheet.insertRule(".body-without-border {width:"+( this.width - 10 )+"px}" , 0 );
-        this.sheet.insertRule(".menu i {font-size:"+Math.floor( ( this.width - 10 ) / 9 )+"px}" , 0 );
+        this.sheet.insertRule(".menu a {font-size:"+Math.floor( ( this.width - 10 ) / 9 )+"px}" , 0 );
         this.sheet.insertRule("#scorerow td {height:"+Math.floor( ( this.width - 10 ) / 6 ) +
                          "px;width:"+Math.floor( ( this.width - 10 ) / 6 )+"px;"+
                          "font-size:"+Math.floor( ( this.width - 10 ) / 12 )+"px;}" , 0 );
