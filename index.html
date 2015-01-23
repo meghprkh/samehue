@@ -60,9 +60,27 @@
                     </p>
                 </div>
                 <div id="settings">
+                    <table>
+                        <tr>
+                            <td>Size</td>
+                            <td><input id="size" /></td>
+                        </tr>
+                        <tr>
+                            <td>Steps</td>
+                            <td><input id="steps" /></td>
+                        </tr>
+                    </table>
                     <p>
-                        This is a work in progress.
+                        Settings will be applied in new game.
                     </p>
+                    <p>
+                        Default Settings : <br />
+                        Easy : 5x5 45 steps <br />
+                        Medium : 6x6 70 moves <br />
+                        Hard : 7x7 95 moves
+                    </p>
+                    <span class="red button" onclick="Manager.applySettings()">Apply</span>
+                    <span class="green button" onclick="Display.showGame()">Cancel</span>
                 </div>
                 <div id="confirmNewGame">
                     Are you sure you want to start a new game?

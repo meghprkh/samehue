@@ -150,4 +150,9 @@ body {
 .button {
     cursor : pointer;
     padding : 10px;
+    display : inline-block;
+}
+
+#settings td {
+    color : #FAF8EF;
 }
