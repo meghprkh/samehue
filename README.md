@@ -3,7 +3,7 @@ A simple game.
 
 Play it at http://meghprkh.github.io/samehue/
 
-Install on your mobile from https://build.phonegap.com/apps/1278446/install
+Install on your mobile from https://build.phonegap.com/apps/1278479/share
 
 # Generator algorithm
 
