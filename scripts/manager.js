@@ -69,5 +69,6 @@ var Manager=new function ()
     this.applySettings = function () {
         this.size = Helpers.gei("size").value;
         this.steps = Helpers.gei("steps").value;
+        Display.showGame();
     }
 }
