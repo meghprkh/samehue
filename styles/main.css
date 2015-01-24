@@ -136,9 +136,6 @@ body {
     text-align:center;
 }
 
-#confirmNewGame > .button {
-    margin : 15px;
-}
 .green {
     background-color:#2ecc71 !important;
 }
@@ -153,6 +150,11 @@ body {
     display : inline-block;
 }
 
+#settings {
+    text-align:center;
+}
 #settings td {
+    padding : 5px;
     color : #FAF8EF;
+    text-align:left;
 }

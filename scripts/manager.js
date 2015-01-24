@@ -65,10 +65,4 @@ var Manager=new function ()
 		if(this.isSolved())
 			alert("Solved in "+this.moves+" moves instead of "+this.steps+" moves.");
 	}
-    
-    this.applySettings = function () {
-        this.size = Helpers.gei("size").value;
-        this.steps = Helpers.gei("steps").value;
-        Display.showGame();
-    }
 }
