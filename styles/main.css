@@ -132,7 +132,15 @@ body {
 }
 
 #confirmNewGame {
-    font-size:x-large;
+    font-size:large;
+    text-align:center;
+}
+.twobuttons {
+    width:100%;
+}
+.twobuttons td {
+    width:50%;
+    display:table-cell;
     text-align:center;
 }
 
@@ -148,13 +156,25 @@ body {
     cursor : pointer;
     padding : 10px;
     display : inline-block;
+    font-size:large;
 }
 
 #settings {
     text-align:center;
+    font-size:large;
 }
-#settings td {
+.settings td {
     padding : 5px;
     color : #FAF8EF;
     text-align:left;
+}
+
+#menu {
+    display:none;
+    text-align: center;
+}
+
+#menu > .button {
+    display:block;
+    margin:5px;
 }

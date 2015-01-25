@@ -16,21 +16,37 @@ var Display = new function() {
     	return style.sheet;
     })();
     this.width;
+    
+    this.stateChanged = function () {
+        if(Manager.state==0||Manager.state==3) Helpers.gei("ReturnToGame").style.display="none";
+        else Helpers.gei("ReturnToGame").style.display="block";
+    }
+    
     this.showSettings = function() {
         this.hideall();
         Helpers.gei("HelpAndSettings").style.display="block";
         Helpers.gei("settings").style.display="block";
     };
     this.showHelp = function() {
+        if(!(Manager.state==0||Manager.state==3)) Manager.changeState(2);
         this.hideall();
         Helpers.gei("HelpAndSettings").style.display="block";
         Helpers.gei("help").style.display="block";
     };
+    this.showMenu = function() {
+        Manager.changeState(3);
+        this.hideall();
+        Helpers.gei("HelpAndSettings").style.display="block";
+        Helpers.gei("menu").style.display="block";
+    };
     this.showGame = function() {
+        if(Manager.state==0||Manager.state==3) {this.showMenu();return;}
         this.hideall();
         Helpers.gei("container").style.display="block";
     };
     this.confirmNewGame= function () {
+        if(Manager.state==0||Manager.state==3) {Display.showMenu();return;}
+        Manager.changeState(2);
         this.hideall();
         Helpers.gei("HelpAndSettings").style.display="block";
         Helpers.gei("confirmNewGame").style.display="block";
@@ -65,6 +81,7 @@ var Display = new function() {
         Helpers.gei("help").style.display="none";
         Helpers.gei("settings").style.display="none";
         Helpers.gei("confirmNewGame").style.display="none";
+        Helpers.gei("menu").style.display="none";
     };
 
     this.updateScore = function () {
@@ -76,6 +93,4 @@ var Display = new function() {
         var s = "000" + num;
         return s.substr(s.length-size);
     }
-
-
 }

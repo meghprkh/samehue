@@ -1,6 +1,6 @@
-var state=0|1|2; //not started/playing/over
 var Manager=new function ()
 {
+    this.state; //not started/playing/paused/over
     this.size=7;
 	this.steps=95;
 	this.moves=0;
@@ -11,9 +11,16 @@ var Manager=new function ()
     this.init = function () {
         Input.gamebind();
         Display.init();
+        this.changeState(0);
+    }
+    
+    this.changeState = function (state) {
+        this.state=state;
+        Display.stateChanged();
     }
     
     this.new = function () {
+        this.changeState(1);
       	this.moves = 0 ;
         Board.init();
         Display.new();
@@ -62,7 +69,9 @@ var Manager=new function ()
 		Board.addCursor();
 		Display.updateScore();
 
-		if(this.isSolved())
+		if(this.isSolved()) {
 			alert("Solved in "+this.moves+" moves instead of "+this.steps+" moves.");
+            this.changeState(3);
+        }
 	}
 }

@@ -16,7 +16,6 @@
         <div class="menu">
             <a href="#" class="icon-reset" onclick="Display.confirmNewGame();" title="New"></a>
             <a href="#" class="icon-help" onclick="Display.showHelp();" title="Help"></a>
-            <a href="#" class="icon-settings" onclick="Display.showSettings();" title="Settings"></a>
         </div>
     </div>
     <div id="container" class="body" >
@@ -64,7 +63,7 @@
                     </p>
                 </div>
                 <div id="settings">
-                    <table>
+                    <table class="settings twobuttons">
                         <tr>
                             <td>Difficulty</td>
                             <td>
@@ -84,18 +83,39 @@
                             <td><input id="steps" size="3" /></td>
                         </tr>
                     </table>
-                    <p>
-                        <b>Settings will be applied in new game.</b>
-                    </p>
-
-                    <span class="red button" onclick="Settings.applySettings()">Apply</span>
-                    <span class="green button" onclick="Display.showGame()">Cancel</span>
+                    <table class="twobuttons">
+                        <tr>
+                            <td class="red button" onclick="Settings.applySettings()">Apply</td>
+                            <td class="green button" onclick="Settings.applySettings()">Cancel</td>
+                        </tr>
+                    </table>
                 </div>
                 <div id="confirmNewGame">
+                    <br />
                     Are you sure you want to start a new game?
                     <br /><br />
-                    <span class="red button" onclick="Manager.new()">Yes</span>
-                    <span class="green button" onclick="Display.showGame()">No</span>
+                    <table class="twobuttons">
+                        <tr>
+                            <td class="red button" onclick="Display.showMenu()">Yes</td>
+                            <td class="green button" onclick="Display.showGame()">No</td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="menu">
+                    <span class="green button" onclick="Settings.changeDifficulty(0);
+                                                        Settings.applySettings();
+                                                        Manager.new()">
+                        Easy</span>
+                    <span class="green button" onclick="Settings.changeDifficulty(1);
+                                                        Settings.applySettings();
+                                                        Manager.new()">
+                        Medium</span>
+                    <span class="green button" onclick="Settings.changeDifficulty(2);
+                                                        Settings.applySettings();
+                                                        Manager.new()">
+                        Hard</span>
+                    <span class="green button" onclick="Display.showSettings()">
+                        Custom</span>
                 </div>
             </div>
         </div>
@@ -111,7 +131,7 @@
     <script src="scripts/settings.js" type="text/javascript"></script>
     <script type="text/javascript">
         Manager.init();
-        Manager.new();
+        Display.showMenu();
         Settings.changeDifficulty(0);
     </script>
 </body>
