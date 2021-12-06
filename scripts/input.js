@@ -5,6 +5,9 @@ var Input= new function()
         Mousetrap.bind('right',function(e) {Manager.playMove('right')});
         Mousetrap.bind('down',function(e) {Manager.playMove('down')});
         Mousetrap.bind('left',function(e) {Manager.playMove('left')});
+        /*var hammertime = new Hammer(Helpers.gei("container"));
+        hammertime.get('swipe').set({ direction: Hammer.DIRECTION_ALL,velocity:0.01 });
+        hammertime.on('swipeup swipedown swipeleft swiperight',function(ev){Manager.playMove(ev.type.substring(5));});*/
         touchinp();
     }
     function touchinp(){

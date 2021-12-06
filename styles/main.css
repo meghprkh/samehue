@@ -2,7 +2,6 @@ body {
 	background-color:#FAF8EF;
     margin-left: auto;
     margin-right: auto;
-    text-align:center;
 }
 
 .body {
@@ -28,7 +27,6 @@ body {
     border: 5px solid #3a3a3c;
     border-radius: 3px;
     cursor:default;
-    text-align:left;
 }
 
 .fullwidth {
@@ -41,16 +39,25 @@ body {
     cursor:default;
 }
 
-#tab {
-	-ms-touch-action: none;
-}
-
 #tab span {
     display:inline-block;
     padding:0;margin:0;
     color:#FAF8EF;
     text-align:center;
-    font-family: sans-serif;
+}
+
+
+#tab span span {
+    position: relative;
+}
+
+#tab span span p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
 }
 
 #scorerow td {
@@ -60,6 +67,7 @@ body {
     font-weight:bold;
 }
 
+i {color: #3a3a3c;}
 .c0 {background-color:#e85444}
 .c1 {background-color:#f1c40f}
 .c2 {background-color:#2ecc71}
@@ -81,31 +89,9 @@ body {
     text-align:right;
 }
 
-/* Top Menu Icons */
-.menu {
-	text-align:justify;
-	cursor:default;
-	padding-top:5px;
-	padding-bottom:5px;
-}
-.menu:after {
-    content:' ';
-    display:inline-block;
-    width: 100%;
-    height: 0;
-}
-
-.menu > a {
-	color: #3a3a3c;
-	text-decoration: none;
-    display:inline-block;
-}
-
-.menu > a:hover {
-	text-decoration: none;
-}
-
-
+.menu {text-align:justify;cursor:default;}
+.menu:after { content:' '; display:inline-block; width: 100%; height: 0 }
+.menu > span {display:inline-block;cursor:pointer;}
 
 #move td {
     margin:0;
@@ -116,65 +102,4 @@ body {
 .scorelabel {
     padding: 5px;
     background-color:#555555;
-}
-
-#HelpAndSettings {
-    display:none;
-}
-
-#HelpAndSettings > div {
-    display : block;
-}
-
-#ReturnToGame {
-    display:block;
-    font-size:x-large;
-}
-
-#confirmNewGame {
-    font-size:large;
-    text-align:center;
-}
-.twobuttons {
-    width:100%;
-}
-.twobuttons td {
-    width:50%;
-    display:table-cell;
-    text-align:center;
-}
-
-.green {
-    background-color:#2ecc71 !important;
-}
-
-.red {
-    background-color:#e85444 !important;
-}
-
-.button {
-    cursor : pointer;
-    padding : 10px;
-    display : inline-block;
-    font-size:large;
-}
-
-#settings {
-    text-align:center;
-    font-size:large;
-}
-.settings td {
-    padding : 5px;
-    color : #FAF8EF;
-    text-align:left;
-}
-
-#menu {
-    display:none;
-    text-align: center;
-}
-
-#menu > .button {
-    display:block;
-    margin:5px;
 }

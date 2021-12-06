@@ -4,15 +4,20 @@ var Board = new function () {
     const identifiers=["A","B","C","D","E","F"];
 
     this.init = function() {
-        if (typeof this.sheet != "undefined")
-            this.sheet.disabled = true;
-        this.sheet = Helpers.newStyleSheet();
-        
         // Add Styles
-        var x = Math.floor ( ( Display.width - 10 ) / Manager.size ) ;
-        this.sheet.insertRule(".current {   box-shadow: 0 0 0 "+Math.floor(x*0.1)+"px #FAF8EF inset;}", 0 );
-        this.sheet.insertRule("#tab span {height:"+x+"px;width:"+x+"px;font-size:"+Math.floor(x*0.5)+"px;}", 0 );
-        this.sheet.insertRule("#tab span > span {line-height:"+x+"px;}", 0 );
+        var sheet = document.styleSheets[0];
+        var width = Helpers.getWindowSize().width*0.95;
+        var height = Helpers.getWindowSize().height;
+        var x;
+        if(width/Manager.size>120) x=80;
+        else x=parseInt(width/Manager.size);
+            sheet.insertRule(".current {   box-shadow: 0 0 0 "+parseInt(x*0.1)+"px #FAF8EF inset;}", 1);
+            sheet.insertRule("#tab span {height:"+x+"px;width:"+x+"px;font-size:"+parseInt(x*0.5)+"px;}", 1);
+            sheet.insertRule(".body {width:"+( x * Manager.size +10 )+"px}", 1);
+            sheet.insertRule(".body-without-border {width:"+( x * Manager.size )+"px}", 1);
+            sheet.insertRule("#scorerow td {height:"+parseInt(x*Manager.size/6)+
+                             "px;width:"+parseInt(x*Manager.size/6)+"px;"+
+                             "font-size:"+parseInt(x*0.5)+"px;}", 1);
 
         // Add the table
         var table = Helpers.gei("tab");
@@ -20,7 +25,7 @@ var Board = new function () {
         table.innerHTML='';
         var x="";
         for(var r=0;r<Manager.size;r++) {
-            for(var c=0;c<Manager.size;c++) x+="<span id=\""+"c"+c.toString()+"r"+r.toString()+"\"><span></span></span>";
+            for(var c=0;c<Manager.size;c++) x+="<span id=\""+"c"+c.toString()+"r"+r.toString()+"\"><span><p>A</p></span></span>";
             x+="<br />";
         }
         table.innerHTML=x;
@@ -31,7 +36,7 @@ var Board = new function () {
         for(tx=0;tx<Manager.size;tx++) {
         for(ty=0;ty<Manager.size;ty++){
             var x=Helpers.gei(this.getid(tx,ty));
-        	x.firstChild.innerHTML=identifiers[Manager.board[tx][ty]];
+        	x.firstChild.firstChild.innerHTML=identifiers[Manager.board[tx][ty]];
             x.classList.add("c"+Manager.board[tx][ty].toString());
         }}
         this.addCursor();
@@ -57,7 +62,7 @@ var Board = new function () {
         element.className="";
         element.classList.add("c"+Manager.board[Manager.posnx][Manager.posny]
                                             .toString());
-        element.firstChild.innerHTML =
+        element.firstChild.firstChild.innerHTML =
                     identifiers[Manager.board[Manager.posnx][Manager.posny]];
     }
 }
